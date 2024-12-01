@@ -181,8 +181,8 @@ def aim(dove, servo):
                Config.TOP_AIM <= y_center <= Config.BOTTOM_AIM):
         if max_attempts == 0:
             return False
-        if not servo.Aim_side(dove) or not servo.Aim_pitch(dove):
-            continue
+        servo.Aim_side(dove)
+        servo.Aim_pitch(dove)
         x_center, y_center = dove.get_center()
         max_attempts -= 1
 
