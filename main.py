@@ -183,6 +183,8 @@ def aim(dove, servo):
             return False
         servo.Aim_side(dove)
         servo.Aim_pitch(dove)
+            if not dove.is_dove():
+                return False
         x_center, y_center = dove.get_center()
         max_attempts -= 1
 
