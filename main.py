@@ -243,9 +243,9 @@ def main():
 
         if GPIO.input(Config.PUMP_IS_FULL_PORT):
             GPIO.output(Config.SHOOT_PUMP_PORT, GPIO.HIGH)
-            time.sleep(Config.SHOOTING_TIME)
-            GPIO.output(Config.SHOOT_PUMP_PORT, GPIO.LOW)
-            servo.reset_pitch()
+        time.sleep(Config.SHOOTING_TIME)
+        GPIO.output(Config.SHOOT_PUMP_PORT, GPIO.LOW)
+        servo.reset_pitch()
 
 
 if __name__ == "__main__":
