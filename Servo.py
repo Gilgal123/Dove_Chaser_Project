@@ -173,6 +173,9 @@ class Servo:
             undetected_to = 5
 
             self.pitch_deg += 1 if y_center < Config.TOP_AIM else -1
+            if self.pitch_deg < self.alpha_to_beta_map[-16] or self.pitch_deg > self.alpha_to_beta_map[45]:
+                print("not in pitch range")
+                return False
             self.pitch_servo.ChangeDutyCycle(deg_to_duty(self.pitch_deg))
             time.sleep(Config.ROLL_TIME_AIM)
             x_center, y_center = dove.get_center()
